@@ -28,9 +28,6 @@ function convert() {
         valueConverted = inputValue.value * 5.14;
         result.innerHTML = valueFormatter('en-us','USD');
     }
-
-    inputValue.value = ''
-    selectedCurrency.value = ''
 }
 
 function valueFormatter(locale, currency) {
