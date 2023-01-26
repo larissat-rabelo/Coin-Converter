@@ -23,14 +23,23 @@ function convert() {
     if(selectedCurrency.value === 'eur') {
         valueConverted = inputValue.value * 5.60;
         result.innerHTML = valueFormatter('pt-br','EUR');
+        animateResult();
 
     } else if (selectedCurrency.value === 'usd') {
         valueConverted = inputValue.value * 5.14;
         result.innerHTML = valueFormatter('en-us','USD');
+        animateResult();
     }
 }
 
 function valueFormatter(locale, currency) {
     const value = valueConverted.toLocaleString(`${locale}`,{style: 'currency', currency: `${currency}`})
     return `${value}`;
+}
+
+function animateResult() {
+    return result.animate([
+        { transform: 'translateY(-100px)'},
+        { transform: 'translateY(5px)'},
+    ], { duration: 600})
 }
